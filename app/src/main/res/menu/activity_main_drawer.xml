@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_prep1"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_1" />
+        <item
+            android:id="@+id/nav_prep2"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_2" />
+        <item
+            android:id="@+id/nav_prep3"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_3" />
+        <item
+            android:id="@+id/nav_prep4"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_4" />
+        <item
+            android:id="@+id/nav_prep5"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_5" />
+        <item
+            android:id="@+id/nav_prep6"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/prep_state_6" />
+    </group>
+
+</menu>
