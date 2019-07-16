@@ -115,9 +115,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        if (id == R.id.map) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -126,49 +126,77 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-
         int id = item.getItemId();
+        String IP = mCameraIP.getText().toString();
+        String userLogin = mLogin.getText().toString();
+        String userPassword = mPassword.getText().toString();
 
-        if (id == R.id.nav_prep1) {
+        if (id == R.id.nav_prep_home) {
+            preparedAction(IP, userLogin, userPassword, "home");
 
-            preparedAction("http://192.168.0.100/axis-cgi/mjpg/video.cgi?rotation=90");
+        } else if (id == R.id.nav_prep1) {
+            preparedAction(IP, userLogin, userPassword, "Position1");
 
-        } else if (id == R.id.nav_prep2) {
+        }else if (id == R.id.nav_prep2) {
+            preparedAction(IP, userLogin, userPassword, "Position2");
 
         } else if (id == R.id.nav_prep3) {
+            preparedAction(IP, userLogin, userPassword, "Position3");
 
         } else if (id == R.id.nav_prep4) {
+            preparedAction(IP, userLogin, userPassword, "Position4");
 
         } else if (id == R.id.nav_prep5) {
+            preparedAction(IP, userLogin, userPassword, "Position5");
 
         } else if (id == R.id.nav_prep6) {
+            preparedAction(IP, userLogin, userPassword, "Position6");
+
+        } else if (id == R.id.nav_prep7) {
+            preparedAction(IP, userLogin, userPassword, "Position7");
+
+        } else if (id == R.id.nav_prep8) {
+            preparedAction(IP, userLogin, userPassword, "Position8");
+
+        } else if (id == R.id.nav_prep9) {
+            preparedAction(IP, userLogin, userPassword, "Position9");
+
+        } else if (id == R.id.nav_prep10) {
+            preparedAction(IP, userLogin, userPassword, "Position10");
+
+        } else if (id == R.id.nav_prep11) {
+            preparedAction(IP, userLogin, userPassword, "Position11");
+
+        } else if (id == R.id.nav_prep12) {
+            preparedAction(IP, userLogin, userPassword, "Position12");
+
+        } else if (id == R.id.nav_prep13) {
+            preparedAction(IP, userLogin, userPassword, "Position13");
 
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public void preparedAction(String URL) {
+    public void preparedAction(String IP, String username, String password, String action) {
         OkHttpClient client = new OkHttpClient();
-        String username = "root";
-        String password ="root";
         String credentials = username+":"+password;
 
         final String basic = "Basic "+ Base64.encodeToString(credentials.getBytes(),
                 Base64.NO_WRAP);
-
+        String url = "http://"+IP+"/axis-cgi/com/ptz.cgi?gotoserverpresetname="+action;
         Request request = new Request.Builder()
-                .url(URL)
+                .url(url)
                 .addHeader("Authorization", basic)
                 .build();
 
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
             public void onResponse(Call call, Response response) {
-                System.out.println("Response!");
-                System.out.println(response);
+               // System.out.println("Response!");
                 try {
                     System.out.println(response.body().string());
                 } catch (IOException e) {
@@ -176,44 +204,11 @@ public class MainActivity extends AppCompatActivity
                 }
             }
             public void onFailure(Call call, IOException e) {
-                System.out.println("Failure...");
-                System.out.println(e);
+                //System.out.println("Failure...");
+                //System.out.println(e);
             }
         });
     }
-
-    private static OkHttpClient createAuthenticatedClient(final String username,
-                                                          final String password) {
-        OkHttpClient httpClient=new OkHttpClient.Builder().authenticator(
-                new Authenticator() {
-                    @Override
-                    public Request authenticate(Route route, Response response) throws IOException {
-                        String credential = Credentials.basic(username, password);
-                        return response.request().newBuilder().header("Authorization", credential).build();
-
-                    }
-                }).build();
-        return httpClient;
-    }
-
-    private static Response doRequest(OkHttpClient client, String url) throws IOException{
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        Response response = client.newCall(request).execute();
-        if(!response.isSuccessful()) {
-            throw new IOException("Unexpected code "+response);
-        }
-        System.out.println(response.body().string());
-        return response;
-    }
-
-    public static Response fetch(String url, String username, String password) throws IOException {
-        OkHttpClient client = createAuthenticatedClient(username, password);
-        return doRequest(client, url);
-    }
-
-
     public void startStream() {
         String IP = mCameraIP.getText().toString();
         // если камера имеет логин/пароль
@@ -223,10 +218,12 @@ public class MainActivity extends AppCompatActivity
             userPassword += "@";
         }
 
-        String videoSource = "rtsp://" + userLogin + userPassword + IP + "/axis-media/media.amp";
+        //String videoSource = "rtsp://" + userLogin + userPassword + IP + "/axis-media/media.amp";
+        //String videoSource = "rtsp://" + userLogin + userPassword + IP + "/mpeg4/media.amp";
+        String videoSource = "rtsp://root:root@192.168.0.106/mpeg4/media.amp";
         mVideoView.setVideoURI(Uri.parse(videoSource));
-        mVideoView.setMediaController(new MediaController(getApplicationContext()));
-        mVideoView.requestFocus(0);
+       // mVideoView.setMediaController(new MediaController(getApplicationContext()));
+        //mVideoView.requestFocus(0);
         mVideoView.start();
     }
 }

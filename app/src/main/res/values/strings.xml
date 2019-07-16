@@ -7,16 +7,23 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="prep_stat">Преднастройка1</string>
-    <string name="prep_state_1">Преднастройка 1</string>
-    <string name="prep_state_3">Преднастройка 3</string>
-    <string name="prep_state_2">Преднастройка 2</string>
-    <string name="prep_state_4">Преднастройка 4</string>
-    <string name="prep_state_5">Преднастройка 5</string>
-    <string name="prep_state_6">Преднастройка 6</string>
     <string name="start_translation">Начать трансляцию</string>
     <string name="ip">IP адрес</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
     <string name="ok">Войти</string>
+    <string name="home">Home</string>
+    <string name="pos_5">Позиция 5</string>
+    <string name="pos_6">Позиция 6</string>
+    <string name="pos_7">Позиция 7</string>
+    <string name="pos_8">Позиция 8</string>
+    <string name="pos_9">Позиция 9</string>
+    <string name="pos_10">Позиция 10</string>
+    <string name="pos_11">Позиция 11</string>
+    <string name="pos_12">Позиция 12</string>
+    <string name="pos_13">Позиция 13</string>
+    <string name="pos_4">Позиция 4</string>
+    <string name="pos_1">Позиция 1</string>
+    <string name="pos_2">Позиция 2</string>
+    <string name="pos_3">Позиция 3</string>
 </resources>

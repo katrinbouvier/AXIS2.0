@@ -5,29 +5,61 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_prep_home"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/home" />
+        <item
             android:id="@+id/nav_prep1"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_1" />
+            android:title="@string/pos_1" />
         <item
             android:id="@+id/nav_prep2"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_2" />
+            android:title="@string/pos_2" />
         <item
             android:id="@+id/nav_prep3"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_3" />
+            android:title="@string/pos_3" />
         <item
             android:id="@+id/nav_prep4"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_4" />
+            android:title="@string/pos_4" />
         <item
             android:id="@+id/nav_prep5"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_5" />
+            android:title="@string/pos_5" />
         <item
             android:id="@+id/nav_prep6"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/prep_state_6" />
+            android:title="@string/pos_6" />
+        <item
+            android:id="@+id/nav_prep7"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_7" />
+        <item
+            android:id="@+id/nav_prep8"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_8" />
+        <item
+            android:id="@+id/nav_prep9"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_9" />
+        <item
+            android:id="@+id/nav_prep10"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_10" />
+        <item
+            android:id="@+id/nav_prep11"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_11" />
+        <item
+            android:id="@+id/nav_prep12"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_12" />
+        <item
+            android:id="@+id/nav_prep13"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/pos_13" />
     </group>
 
 </menu>
